@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diyorbek Tilovboyev - Shaxsiy Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Orqa fonda suzib yuruvchi nuqtalar -->
+    <canvas id="dots-canvas"></canvas>
+
+    <!-- Tepada qotib turuvchi va mobilbop Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">⚽ Diyorbek.Tilovboyev</div>
+            <nav class="nav-links">
+                <a href="#about">Men haqimda</a>
+                <a href="#biography">Biografiya</a>
+                <a href="#family">Oila</a>
+                <a href="#contact">Aloqa</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Asosiy moslashuvchan tarkib -->
+    <main class="main-content">
+
+        <!-- Hero Section -->
+        <section id="about" class="mega-section profile-hero">
+            <span class="section-tag">PORTFOLIO</span>
+            <h1>Diyorbek Tilovboyev</h1>
+            <h3>Junior Dasturchi & Kiberxavfsizlik Ishqibozi</h3>
+            <p>Raqamli dunyoda o'z kelajagimni qurayotgan yosh dasturchiman. Saytimga xush kelibsiz! Pastga tushib men haqimda ko'proq bilib oling.</p>
+        </section>
+
+        <!-- Biografiya (Mobilbop Grid) -->
+        <section id="biography" class="mega-section">
+            <span class="section-tag">BIOGRAFIYA</span>
+            <h2>Men haqimda qisqacha</h2>
+            <div class="bio-grid">
+                <div class="bio-card">
+                    <h4>📅 Yosh va o'qish</h4>
+                    <p>Men 13 yoshdaman. Hozirda 32-maktabning 7-"B" sinfida a'lo baholarga o'qiyman.</p>
+                </div>
+                <div class="bio-card">
+                    <h4>🎮 Hobbi va qiziqish</h4>
+                    <p>Bo'sh vaqtlarimda kompyuterda CS2 (Counter-Strike 2) o'ynashni va ko'chada futbol o'ynashni juda yaxshi ko'raman.</p>
+                </div>
+                <div class="bio-card">
+                    <h4>🏃‍♂️ Jismoniy ko'rsatkichlar</h4>
+                    <p>Bo'yim: 1.72 metr | Vaznim: 53 kg. Sog'lom turmush tarziga amal qilaman.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Oila qismi -->
+        <section id="family" class="mega-section">
+            <span class="section-tag">OILA</span>
+            <h2>Mening oilam</h2>
+            <p>Men oilada katta farzandman. Mening oilam juda ahil va mehribon:</p>
+            <div class="family-list">
+                <div class="family-item"><strong>👨 Adam:</strong> Baxtiyor</div>
+                <div class="family-item"><strong>👩 Onam:</strong> Qunduzoy</div>
+                <div class="family-item"><strong>👧 Singlim:</strong> Kumushoy</div>
+            </div>
+        </section>
+
+        <!-- Aloqa formasi -->
+        <section id="contact" class="mega-section">
+            <span class="section-tag">CONTACT</span>
+            <h2>Xabar qoldirish</h2>
+            <p>Men bilan bog'lanish yoki fikr bildirish uchun formani to'ldiring:</p>
+            <form onsubmit="handleContact(event)">
+                <input type="text" placeholder="Ismingiz" required>
+                <input type="email" placeholder="Email manzilingiz" required>
+                <textarea rows="4" placeholder="Xabaringiz..." required></textarea>
+                <button type="submit">Xabarni Yo'llash</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Diyorbek Tilovboyev. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <!-- ChatGPT Aqlli Yordamchisi -->
+    <div class="chat-widget">
+        <button class="chat-toggle-btn" onclick="toggleChat()">
+            🤖 ChatGPT
+            <span id="chat-badge" class="chat-badge" style="display: none;">0</span>
+        </button>
+
+        <div id="chat-box" class="chat-box">
+            <div class="chat-header">
+                <h4>🤖 ChatGPT Assistant</h4>
+                <button class="close-chat" onclick="toggleChat()">×</button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="msg bot-msg">Salom! Men Diyorbekning shaxsiy yordamchisiman. U, maktabi, oilasi yoki xohlagan ma'lumoti haqida so'rang!</div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="chat-input" placeholder="Xabarni yozing..." onkeypress="checkChatEnter(event)">
+                <button onclick="sendChatMessage()">></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

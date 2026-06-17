@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #060b14;
+    color: #00ff66;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Suzib yuruvchi nuqtalar uchun canvas foni */
+#dots-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Qotib turuvchi Header */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(6, 11, 20, 0.95);
+    border-bottom: 2px solid #00ff66;
+    z-index: 100;
+    padding: 15px 0;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+}
+
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff66;
+    text-shadow: 0 0 10px #00ff66;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: #00ff66;
+    color: #000;
+    box-shadow: 0 0 15px #00ff66;
+}
+
+/* Asosiy kontent o'lchamlari */
+.main-content {
+    max-width: 800px;
+    margin: 120px auto 40px;
+    padding: 0 20px;
+}
+
+.mega-section {
+    background: rgba(11, 19, 36, 0.9);
+    border: 1px solid rgba(0, 255, 102, 0.2);
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.section-tag {
+    font-size: 11px;
+    background: #00ff66;
+    color: #000;
+    padding: 3px 8px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px;
+    border-radius: 2px;
+}
+
+h1, h2, h3, h4 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #94a3b8;
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Biografiya kartalari */
+.bio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.bio-card {
+    background: rgba(6, 11, 20, 0.6);
+    border-left: 4px solid #00ff66;
+    padding: 15px;
+    border-radius: 0 6px 6px 0;
+}
+
+.bio-card h4 { color: #00ff66; margin-bottom: 5px; }
+.bio-card p { margin-bottom: 0; }
+
+/* Oila ro'yxati */
+.family-list {
+    background: rgba(6, 11, 20, 0.6);
+    padding: 20px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.family-item {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* Formlar */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0, 255, 102, 0.3);
+    background: #060b14;
+    color: #ffffff;
+    outline: none;
+    border-radius: 4px;
+}
+
+input:focus, textarea:focus {
+    border-color: #00ff66;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+}
+
+button {
+    background: #00ff66;
+    color: #060b14;
+    font-weight: bold;
+    border: none;
+    padding: 14px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffffff;
+    box-shadow: 0 0 15px #ffffff;
+}
+
+.main-footer {
+    background: #02060c;
+    text-align: center;
+    padding: 25px;
+    color: #475569;
+    border-top: 1px solid rgba(0, 255, 102, 0.1);
+    font-size: 14px;
+}
+
+/* CHAT WIDGET SYSTEM */
+.chat-widget { position: fixed; bottom: 25px; right: 25px; z-index: 1000; }
+.chat-toggle-btn { background: #060b14; color: #00ff66; border: 2px solid #00ff66; padding: 12px 20px; font-size: 15px; font-weight: bold; cursor: pointer; box-shadow: 0 0 15px rgba(0, 255, 102, 0.3); position: relative; border-radius: 4px; }
+.chat-badge { position: absolute; top: -10px; right: -10px; background: #ff003c; color: white; font-size: 12px; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #000; font-weight: bold; }
+.chat-box { display: none; position: absolute; bottom: 60px; right: 0; width: 320px; height: 400px; background: rgba(6, 11, 20, 0.98); border: 2px solid #00ff66; box-shadow: 0 0 25px rgba(0, 255, 102, 0.4); flex-direction: column; border-radius: 6px; }
+.chat-header { background: #00ff66; color: #060b14; padding: 10px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; border-radius: 4px 4px 0 0; }
+.close-chat { background: none; border: none; color: #060b14; font-size: 22px; cursor: pointer; }
+.chat-messages { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+.msg { padding: 8px 12px; border-radius: 4px; max-width: 85%; font-size: 14px; line-height: 1.4; }
+.bot-msg { background: rgba(0, 255, 102, 0.08); color: #00ff66; border: 1px solid rgba(0, 255, 102, 0.3); align-self: flex-start; }
+.user-msg { background: #00ff66; color: #060b14; align-self: flex-end; font-weight: bold; }
+.chat-footer { display: flex; padding: 10px; border-top: 1px solid rgba(0, 255, 102, 0.2); gap: 5px; }
+.chat-footer input { margin-bottom: 0; padding: 8px; background: #02060c; border: 1px solid rgba(0, 255, 102, 0.2); color: #fff;}
+.chat-footer button { width: 45px; padding: 0; background: #00ff66; color: #060b14; }
+
+/* === MOBIL MOSLASHUV (RESPONSIVE MEDIA QUERIES) === */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 5px 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+        width: 100%;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        font-size: 13px;
+        padding: 6px 12px;
+        flex: 1 1 40%; /* Tugmalarni telefonda chiroyli qator qiladi */
+    }
+
+    .main-content {
+        margin-top: 170px; /* Header tepani yopib qo'ymasligi uchun */
+        padding: 0 12px;
+    }
+
+    .mega-section {
+        padding: 22px 15px;
+        margin-bottom: 25px;
+    }
+
+    h1 { font-size: 24px; text-align: center; }
+    h2 { font-size: 20px; }
+    
+    /* Mobil chat widget o'lchamlari */
+    .chat-box {
+        width: 285px;
+        height: 360px;
+        right: -15px;
+    }
+}
